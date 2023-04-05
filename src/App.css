@@ -1,8 +1,26 @@
 .container{
   max-width: 700px;
 }
-
+.App{
+  display: flex;
+}
 .img-fluid {
   width: 100%;
   height: auto;
+}
+.menu {
+  gap: 1rem;
+  margin-left: 1rem;
+}
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.menu-item img {
+  width: 50px;
+  height: auto;
+  margin-top: 0.5rem;
+  border-radius: 50%;
+  border: 1px solid #ccc;
 }

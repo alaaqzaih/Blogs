@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-const Blogs = ({ post }) => {
+const Blogs = ({ post  , theme}) => {
   const [searchId, setSearchId] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -18,8 +18,8 @@ const Blogs = ({ post }) => {
     }
   };
   return (
-    <div className="container">
-      <h1>Latest news :</h1>
+    <div className="container" >
+      <h1 style={{ color: theme.headerColor }} >Latest news :</h1>
       <form onSubmit={handleSubmit}>
         <div className="input-group mb-3">
           <input
@@ -30,7 +30,7 @@ const Blogs = ({ post }) => {
             name="name"
             type="text"
           />
-          <button type="submit" className="btn btn-primary">
+          <button style={{  backgroundColor: theme.searchButton }} type="submit" className="btn btn-primary">
             Search
           </button>
         </div>
@@ -50,7 +50,7 @@ const Blogs = ({ post }) => {
                   <p>
                     <small class="text-body-secondary">{item.author} </small>
                   </p>
-                  <Link to={`/post/${item.id}`} class="btn btn-primary">
+                  <Link to={`/post/${item.id}`} class="btn btn-primary" style={{  backgroundColor: theme.searchButton }}>
                     Read More
                   </Link>
                 </div>
@@ -62,5 +62,6 @@ const Blogs = ({ post }) => {
     </div>
   );
 };
+
 
 export default Blogs;
